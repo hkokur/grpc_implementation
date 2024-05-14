@@ -1,6 +1,6 @@
 
 to do:
-- can improve more intelligante senario
+- can improve more intelligent scenario
 - using grpc exceptions
 - using grpc streams
 - using grpc secure channel
