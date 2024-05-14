@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package transaction;
+
+service Transaction {
+	// make transaction from one to another person
+	rpc MakeTransaction(TransactionMessage) returns (TransactionResponse);
+}
+
+message TransactionMessage {
+	string receiver = 1;
+	string sender = 2;
+	float amount = 3;
+}
+
+message TransactionResponse {
+	bool isSuccess = 4;
+}

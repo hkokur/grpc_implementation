@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package stock;
+
+service Stock {
+	// checking the stock to start transactions - unary
+	rpc CheckStock(Product) returns (ProductStockCheckResponse);
+	// reduce the stock after transactions - unary
+	rpc ReduceStock(Product) returns (ProductStockReduceResponse);
+}
+
+message Product{
+	int32 id = 1;
+	int32 quantity = 2;
+}
+
+message ProductStockCheckResponse{
+	bool isEnough = 3;
+}
+
+message  ProductStockReduceResponse{
+	bool isSuccess = 4;
+}
